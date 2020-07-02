@@ -2,7 +2,7 @@
 <html>
 <head>
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/vuetify/1.5.24/vuetify.min.css" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
   <style>
@@ -97,49 +97,7 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
-<script>
-  new Vue({
-    el: '#app',
-    data() {
-      return {
-        isDark: true,
-        show: true,
-        todoTitle: '',
-        todos: []
-      }
-    },
-    methods: {
-      addTodo() {
-        const title = this.todoTitle.trim()
-        if (!title) {
-          return
-        }
-        this.todos.push({
-          title: title,
-          id: Math.random(),
-          done: false,
-          date: new Date()
-        })
-        this.todoTitle = ''
-      },
-      removeTodo(id) {
-        this.todos = this.todos.filter(t => t.id !== id)
-      }
-    },
-    filters: {
-      capitalize(value) {
-        return value.toString().charAt(0).toUpperCase() + value.slice(1)
-      },
-      date(value) {
-        return new Intl.DateTimeFormat('ru-RU', {
-          year: 'numeric',
-          month: 'long',
-          day: '2-digit'
-        }).format(new Date(value))
-      }
-    }
-  })
-</script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@1.5.24/dist/vuetify.js"></script>
+<script src="./app.js"></script>
 </body>
 </html>
